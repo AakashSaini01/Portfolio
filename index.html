@@ -9,10 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Aakash Saini</title>
 
-    <script>
+    <!-- <script>
         document.documentElement.classList.remove('no-js');
         document.documentElement.classList.add('js');
-    </script>
+    </script> -->
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <!-- CSS
     ================================================== -->
@@ -67,6 +69,7 @@
                         <li><a class="smoothscroll" href="#about">About</a></li>
                         <li><a class="smoothscroll" href="#education">Education</a></li>
                         <li><a class="smoothscroll" href="#skills">Skills</a></li>
+                        <li><a class="smoothscroll" href="#experience">Experience</a></li>
                     </ul> <!-- s-header__menu-links -->
                 </nav> <!-- end s-header__nav -->
 
@@ -370,8 +373,125 @@
         </skills>
 
 
-        <!-- # footer 
-        ================================================== -->
+        <!-- # Work Experience ================================================== -->
+        <experience class="section-experience">
+            <section id="experience" class="s-experience target-section">
+                <div class="row">
+                    <div class="column xl-12">
+                        <div class="section-header" data-num="04">
+                            <h2 class="text-display-title">Work Experience</h2>
+                        </div> <!-- end section-header -->
+                    </div>
+                </div>
+            </section>
+
+            <div class="carousel-container">
+                <div class="experience-row row" id="experienceCarousel">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="book">
+                            <div class="content">
+                                <p><strong>INMAS, DRDO </strong>Delhi, India<br><em>Jul 2020 – Oct 2020</em></p>
+                                <ul>
+                                    <li>Worked on CAD drafting methods</li>
+                                    <li>Studied machining & quality control</li>
+                                </ul>
+                            </div>
+                            <div class="cover">
+                                <p class="cover-role">Mechanical Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="book">
+                            <div class="content">
+                                <p><strong> INMAS, DRDO </strong>Delhi, India <br>
+                                    <em>Jul 2023 – Aug 2023</em>
+                                </p>
+                                <br>
+                                <ul>
+                                    <li>Built EEG signal analysis tool (HTML, CSS, Python)</li>
+                                    <li>Used MNE for signal processing & plotting</li>
+                                    <li>Designed user-friendly data interface</li>
+                                </ul>
+                            </div>
+                            <div class="cover">
+                                <p class="cover-role">Software Developer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-4 col-sm-6">
+                        <div class="book">
+                            <div class="content">
+                                <p><strong> INMAS, DRDO </strong>Delhi, India <br>
+                                    <em>Jul 2023 – Aug 2023</em>
+                                </p>
+                                <br>
+                                <ul>
+                                    <li>Built EEG signal analysis tool (HTML, CSS, Python)</li>
+                                    <li>Used MNE for signal processing & plotting</li>
+                                    <li>Designed user-friendly data interface</li>
+                                </ul>
+                            </div>
+                            <div class="cover">
+                                <p class="cover-role">Software Developer</p>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </experience>
+
+
+        <!-- # Projects ================================================== -->
+
+        <projects class="s-projects">
+            <section id="experience" class="s-experience target-section">
+                <div class="row">
+                    <div class="column xl-12">
+                        <div class="section-header" data-num="05">
+                            <h2 class="text-display-title">Projects</h2>
+                        </div> <!-- end section-header -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="projectCarousel">
+                <ul class="carousel">
+                    <li class="items main-pos" id="1">
+                        <p>1</p>
+                    </li>
+                    <li class="items right-pos" id="2">
+                        <iframe src="https://aakashsaini-two.vercel.app/" width="100%" height="100%"
+                            frameborder="0"></iframe>
+                    </li>
+                    <li class="items back-pos" id="3">
+                        <img src="http://farm9.staticflickr.com/8337/8234711202_831b23a2b7.jpg" />
+                    </li>
+                    <li class="items back-pos" id="4">
+                        <iframe width="100%" height="100%" src="https://larksper.vercel.app/" frameborder="0"></iframe>
+                    </li>
+                    <li class="items back-pos" id="5">
+                        <iframe src="https://player.vimeo.com/video/19464611" width="500" height="281" frameborder="0"
+                            webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    </li>
+                    <li class="items back-pos" id="6">
+                        <img src="http://woofie2.pixiq.com/files/cache/20030323_img_7465_3072_x_2048_619x413.jpg" />
+                    </li>
+                    <li class="items left-pos" id="7"><img
+                            src="http://www.mishes.com/wp-content/uploads/2011/12/FlickrMonday07.jpg" />
+                    </li>
+                </ul>
+                <span>
+                    <button class="buttons" id="prev"><span>Prev</span></button>
+                    <button class="buttons" id="next"><span>Next</span></button>
+                </span>
+            </section>
+        </projects>
+
+
+        <!-- # footer ================================================== -->
         <footer id="footer" class="s-footer target-section">
             <div class="row s-footer__content">
 
@@ -542,6 +662,109 @@
                 }
             });
         });
+    </script>
+
+    <!------------------------- Carousel -------------------------->
+    <script>
+        var autoSwap = setInterval(swap, 3500);
+
+        $('ul, span').hover(
+            function () {
+                clearInterval(autoSwap); // pause on hover
+            },
+            function () {
+                clearInterval(autoSwap); // clear existing before setting new
+                autoSwap = setInterval(() => swap(), 3500);
+            }
+        );
+
+        var items = [];
+        var startItem = 1;
+        var position = 0;
+        var itemCount = $('.carousel li.items').length;
+        var leftpos = itemCount;
+        var resetCount = itemCount;
+
+        $('li.items').each(function (index) {
+            items[index] = $(this).text();
+        });
+
+        function swap(action) {
+            var direction = action;
+
+            if (direction == 'counter-clockwise') {
+                var leftitem = parseInt($('.left-pos').attr('id')) - 1;
+                if (leftitem == 0) {
+                    leftitem = itemCount;
+                }
+
+                $('.right-pos').removeClass('right-pos').addClass('back-pos');
+                $('.main-pos').removeClass('main-pos').addClass('right-pos');
+                $('.left-pos').removeClass('left-pos').addClass('main-pos');
+                $('#' + leftitem + '').removeClass('back-pos').addClass('left-pos');
+
+                startItem--;
+                if (startItem < 1) {
+                    startItem = itemCount;
+                }
+            }
+
+            if (direction == 'clockwise' || direction == '' || direction == null) {
+                function pos(positionvalue) {
+                    if (positionvalue != 'leftposition') {
+                        position++;
+
+                        if ((startItem + position) > resetCount) {
+                            position = 1 - startItem;
+                        }
+                    }
+
+                    if (positionvalue == 'leftposition') {
+                        position = startItem - 1;
+
+                        if (position < 1) {
+                            position = itemCount;
+                        }
+                    }
+
+                    return position;
+                }
+
+                let mainID = ((startItem) % itemCount) + 1;
+                let rightID = ((startItem + 1) % itemCount) + 1;
+                let leftID = ((startItem - 2 + itemCount) % itemCount) + 1;
+
+                $('#' + startItem).removeClass('main-pos').addClass('left-pos');
+                $('#' + mainID).removeClass('right-pos back-pos').addClass('main-pos');
+                $('#' + rightID).removeClass('back-pos').addClass('right-pos');
+                $('#' + leftID).removeClass('left-pos').addClass('back-pos');
+
+                startItem++;
+                if (startItem > itemCount) {
+                    startItem = 1;
+                }
+            }
+        }
+
+        $('#next').click(function () {
+            clearInterval(autoSwap);
+            swap('clockwise');
+            autoSwap = setInterval(() => swap(), 3500);
+        });
+
+        $('#prev').click(function () {
+            clearInterval(autoSwap);
+            swap('counter-clockwise');
+            autoSwap = setInterval(() => swap(), 3500);
+        });
+
+        let classList = $(this).attr('class');
+        if (classList.includes('left-pos')) {
+            swap('counter-clockwise');
+        } else if (classList.includes('right-pos')) {
+            swap('clockwise');
+        }
+
     </script>
 
 
