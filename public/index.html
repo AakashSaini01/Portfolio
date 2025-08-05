@@ -710,15 +710,17 @@
     <script src="./assets/js/main.js"></script>
 
     <script>
-        const tabButtons = document.querySelectorAll(".tab-button");
-        const tabContents = document.querySelectorAll(".tab-content");
+        const buttons = document.querySelectorAll('.tab-btn');
+        const panes = document.querySelectorAll('.tab-pane');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and panes
+                buttons.forEach(b => b.classList.remove('active'));
+                panes.forEach(p => p.classList.remove('active'));
 
-        tabButtons.forEach((button, index) => {
-            button.addEventListener("click", () => {
-                tabButtons.forEach((btn) => btn.classList.remove("active"));
-                tabContents.forEach((content) => content.classList.remove("active"));
-                button.classList.add("active");
-                tabContents[index].classList.add("active");
+                // Add active class to clicked button and related pane
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.tab).classList.add('active');
             });
         });
     </script>
